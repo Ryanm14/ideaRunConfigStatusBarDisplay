@@ -10,20 +10,12 @@ import org.jetbrains.annotations.NonNls
 
 class FileNameStatusBarWidgetFactory : StatusBarEditorBasedWidgetFactory() {
     @NonNls
-    override fun getId(): String {
-        return "RunTimeConfiguration"
-    }
+    override fun getId() = "RunTimeConfiguration"
 
     @Nls
-    override fun getDisplayName(): String {
-        return "Run Time Configuration"
-    }
+    override fun getDisplayName() = "Run Time Configuration"
 
-    override fun createWidget(project: Project): StatusBarWidget {
-        return RunConfigStatusBarWidget(project)
-    }
+    override fun createWidget(project: Project) = RunConfigStatusBarWidget(project)
 
-    override fun disposeWidget(widget: StatusBarWidget) {
-        Disposer.dispose(widget)
-    }
+    override fun disposeWidget(widget: StatusBarWidget) = Disposer.dispose(widget)
 }
